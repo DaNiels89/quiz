@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "question": "What's the capital of Sweden?",
+        "answer": "Stockholm"
+
+    },
+    {
+        "id": 2,
+        "question": "What's the capital of Ireland?",
+        "answer": "Dublin"
+
+    },
+    {
+        "id": 3,
+        "question": "What's the capital of Switzerland?",
+        "answer": "Bern"
+
+    }
+]
