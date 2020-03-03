@@ -5,18 +5,29 @@ import './App.css';
 import data from './trivia.json';
 import Question from './components/Question';
 import Score from './components/Score';
+import Progress from './components/Progress';
 
 function App() {
 
   const [question, setQuestion] = useState(0)
+  const [score,setScore] = useState(0);
 
-  data.map(answer => {return(answer.allAnswers )})
+  let shuffled = data[question].allAnswers.sort(() => Math.random() - 0.5)
+
+  function nextQuestion () {
+    setQuestion(question + 1)
+  }
+
+  function scoreUp () {
+    setScore(score + 1)
+  }
 
   return <div className='container'>
+  <Progress question={data[question].id} length={data.length}/>
     <Question
-      question={data[question].question} answer={data[question].answer} allAnswers={data[question].allAnswers}
+      question={data[question].question} answer={data[question].answer} allAnswers={shuffled} next={() => {nextQuestion()}} scoreUp={() => {scoreUp()}}
     />
-    <Score/>
+    <Score score={score}/>
   </div>;
  
 }

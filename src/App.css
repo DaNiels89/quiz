@@ -16,3 +16,7 @@
   padding:2em;
   width: 50%;
 }
+
+.answerInput {
+  background-color:green;
+}
