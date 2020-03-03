@@ -10,9 +10,11 @@ function App() {
 
   const [question, setQuestion] = useState(0)
 
+  data.map(answer => {return(answer.allAnswers )})
+
   return <div className='container'>
     <Question
-      question={data[question].question} answer={data[question].answer} fakeAnswers={data[question].fakeAnswers}
+      question={data[question].question} answer={data[question].answer} allAnswers={data[question].allAnswers}
     />
     <Score/>
   </div>;
