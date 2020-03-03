@@ -1,10 +1,14 @@
 import React from 'react'
 import data from '../trivia.json'
 
-function Question() {
+
+
+function Question(props) {
+
+
     return(
         <div>
-        {data[0].question}
+        <h1>{props.question}</h1>
         </div>
     )
 }
