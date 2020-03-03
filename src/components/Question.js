@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form';
 import '../assets/css/Question.css';
 import data from '../trivia.json';
 
-export default function Question() {
+export default function Question(props) {
+
   const { register, handleSubmit } = useForm();
   function onSubmit(res, e) {
     if (res.answer === '') {
@@ -15,7 +16,7 @@ export default function Question() {
 
   return (
     <div>
-      <h2>What is the capital city of Sweden?</h2>
+      <h2>{props.question}</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
           <div>
@@ -27,6 +28,7 @@ export default function Question() {
               ref={register}
             />
             <label for="answer1">Stockholm</label>
+            <input id="answer1" name="answer" type="radio" />
           </div>
           <div>
             <input

@@ -1,14 +1,11 @@
 import React from 'react'
-import data from '../trivia.json'
 
 
-function Answers() {
+function Answers(props) {
     return(
         <div>
-        {data[0].answer}
-        {data[0].fakeAnswer1}
-        {data[0].fakeAnswer2}
-        {data[0].fakeAnswer3}
+        {props.answer}
+        {props.fakeAnswers.map(fake => {return fake})}
         </div>
     )
 }

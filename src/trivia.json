@@ -3,21 +3,21 @@
         "id": 1,
         "question": "What's the capital of Sweden?",
         "answer": "Stockholm",
-        "fakeAnswer": "Bratislava",
-        "fakeAnswer2": "Scandinavia",
-        "fakeAnswer3": "Brussels"
+        "fakeAnswers": [ "Bratislava",  "Scandinavia",  "Brussels"]
 
     },
     {
         "id": 2,
         "question": "What's the capital of Ireland?",
-        "answer": "Dublin"
+        "answer": "Dublin",
+        "fakeAnswers": [ "Bratislava",  "Belfast",  "Bern"]
 
     },
     {
         "id": 3,
         "question": "What's the capital of Switzerland?",
-        "answer": "Bern"
+        "answer": "Bern",
+        "fakeAnswers": [ "Bratislava",  "Scandinavia",  "Brussels"]
 
     }
 ]
