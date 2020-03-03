@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useForm } from 'react-hook-form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import data from './trivia.json';
@@ -12,11 +13,13 @@ function App() {
 
   const [question, setQuestion] = useState(0)
 
-  return <div>
+  return <div className='container'>
     <Question
-      question={data[question]}
+      question={data[question].question} answer={data[question].answer}
     />
-     <Answers/>
+     <Answers 
+     answer={data[question].answer} fakeAnswers={data[question].fakeAnswers}
+     />
   <Submit/>
     <Score/>
   </div>;
