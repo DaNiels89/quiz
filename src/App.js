@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import data from './trivia.json';
@@ -9,9 +9,12 @@ import Answers from './components/Answers';
 
 
 function App() {
+
+  const [question, setQuestion] = useState(0)
+
   return <div>
     <Question
-      question={data[0].question}
+      question={data[question]}
     />
      <Answers/>
   <Submit/>
