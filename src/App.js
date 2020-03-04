@@ -6,6 +6,7 @@ import data from './trivia.json';
 import Question from './components/Question';
 import Score from './components/Score';
 import Progress from './components/Progress';
+import Results from './components/Results';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       question={data[question].question} answer={data[question].answer} allAnswers={shuffled} next={() => {nextQuestion()}} scoreUp={() => {scoreUp()}}
     />
     <Score score={score}/>
+    <Results score={score} />
   </div>;
  
 }
