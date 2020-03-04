@@ -14,7 +14,10 @@ function App() {
 
   let shuffled = data[question].allAnswers.sort(() => Math.random() - 0.5)
 
-  function nextQuestion () {
+  function nextQuestion (rightAnswer) {
+    if (rightAnswer){
+      scoreUp()
+    }
     setQuestion(question + 1)
   }
 
@@ -24,8 +27,8 @@ function App() {
 
   return <div className='container'>
   <Progress question={data[question].id} length={data.length}/>
-    <Question
-      question={data[question].question} answer={data[question].answer} allAnswers={shuffled} next={() => {nextQuestion()}} scoreUp={() => {scoreUp()}}
+ <Question
+      question={data[question].question} answer={data[question].answer} allAnswers={shuffled} next={(x) => {nextQuestion(x)}} scoreUp={() => {scoreUp()}}
     />
     <Score score={score}/>
   </div>;
