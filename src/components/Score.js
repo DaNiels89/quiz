@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 function Score(props) {
-    return(
-       
-        <p>your score: {props.score}</p>
-    )
+  return (
+    <div className="score">
+      <div className="left"></div>
+      <div className="center">
+        <p>Score: {props.score}</p>
+      </div>
+      <div className="right"></div>
+    </div>
+  );
 }
 
-export default Score
+export default Score;

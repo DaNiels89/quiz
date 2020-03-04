@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import data from './trivia.json';
@@ -9,33 +8,40 @@ import Progress from './components/Progress';
 import Results from './components/Results';
 
 function App() {
+  const [question, setQuestion] = useState(0);
+  const [score, setScore] = useState(0);
 
-  const [question, setQuestion] = useState(0)
-  const [score,setScore] = useState(0);
+  let shuffled = data[question].allAnswers.sort(() => Math.random() - 0.5);
 
-  let shuffled = data[question].allAnswers.sort(() => Math.random() - 0.5)
-
-  function nextQuestion (rightAnswer) {
-    if (rightAnswer){
-      scoreUp()
+  function nextQuestion(rightAnswer) {
+    if (rightAnswer) {
+      scoreUp();
     }
-    setQuestion(question + 1)
+    setQuestion(question + 1);
   }
 
-  function scoreUp () {
-    setScore(score + 1)
+  function scoreUp() {
+    setScore(score + 1);
   }
 
-  return <div className='container'>
-  {question > data.length ? (<Results/>) : null}  
-  <Progress question={data[question].id} length={data.length}/>
- <Question
-      question={data[question].question} answer={data[question].answer} allAnswers={shuffled} next={(x) => {nextQuestion(x)}} scoreUp={() => {scoreUp()}}
-    />
-    <Score score={score}/>
-    
-  </div>;
- 
+  return (
+    <div className="container">
+      {question > data.length ? <Results /> : null}
+      <Progress question={data[question].id} length={data.length} />
+      <Question
+        question={data[question].question}
+        answer={data[question].answer}
+        allAnswers={shuffled}
+        next={x => {
+          nextQuestion(x);
+        }}
+        scoreUp={() => {
+          scoreUp();
+        }}
+      />
+      <Score score={score} />
+    </div>
+  );
 }
 
 export default App;
