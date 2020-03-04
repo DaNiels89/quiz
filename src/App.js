@@ -27,12 +27,13 @@ function App() {
   }
 
   return <div className='container'>
+  {question > data.length ? (<Results/>) : null}  
   <Progress question={data[question].id} length={data.length}/>
  <Question
       question={data[question].question} answer={data[question].answer} allAnswers={shuffled} next={(x) => {nextQuestion(x)}} scoreUp={() => {scoreUp()}}
     />
     <Score score={score}/>
-    <Results score={score} />
+    
   </div>;
  
 }
