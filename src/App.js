@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import data from './trivia.json';
@@ -13,7 +12,6 @@ const answers = data.map(
 )
 
 function App() {
-
   const [question, setQuestion] = useState(0)
   const [score,setScore] = useState(0);
   const [quizEnd, setQuizEnd] = useState(false);
@@ -31,10 +29,9 @@ function App() {
    } 
   }
 
-  function scoreUp () {
-    setScore(score + 1)
+  function scoreUp() {
+    setScore(score + 1);
   }
-
   if (quizEnd) {
        return (
          <div>
@@ -52,6 +49,7 @@ function App() {
     
   </div>
      )}
+
 }
 
 export default App;

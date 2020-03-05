@@ -8,15 +8,12 @@
   justify-content: center;
 }
 .container {
-  background-color: lightgray;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  text-align:center;
-  margin: 2em;
-  padding:2em;
-  width: 50%;
+  text-align: center;
 }
 
 .onGreen {
-  background-color:green;
+  background-color: green;
 }
