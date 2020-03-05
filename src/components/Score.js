@@ -5,7 +5,7 @@ function Score(props) {
     <div className="score">
       <div className="left"></div>
       <div className="center">
-        <p>Score: {props.score}</p>
+        <p>Score: {parseFloat(props.score/props.length * 100).toFixed() + "%"} </p>
       </div>
       <div className="right"></div>
     </div>

@@ -12,9 +12,6 @@ const answers = data.map(
 )
 
 function App() {
-  const [question, setQuestion] = useState(0);
-  const [score, setScore] = useState(0);
-
   const [question, setQuestion] = useState(0)
   const [score,setScore] = useState(0);
   const [quizEnd, setQuizEnd] = useState(false);
@@ -35,11 +32,10 @@ function App() {
   function scoreUp() {
     setScore(score + 1);
   }
-
   if (quizEnd) {
        return (
          <div>
-       <Score score={score}/>
+       <Score score={score} length={data.length}/>
        <Results score={score}/> 
        </div>)
      } else {
