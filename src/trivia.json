@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
-        "question": "What's the capital of Sweden?",
-        "answer": "Stockholm",
-        "allAnswers": [ "Stockholm", "Bratislava",  "Scandinavia",  "Brussels"]
+        "question": "What is javascript?",
+        "answer": "front-end scripting language",
+        "allAnswers": [ "front-end scripting language", "back-end language",  "object-oriented scripting language",  "a book about coffee"]
 
     },
     {
