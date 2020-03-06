@@ -3,6 +3,15 @@
   margin: 0;
   padding: 0;
 }
+body { 
+    background: url("https://cdn.theculturetrip.com/wp-content/uploads/2017/10/33066997833_152c69ee60_k.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
 #root {
   display: flex;
   justify-content: center;
@@ -15,5 +24,61 @@
 }
 
 .onGreen {
-  background-color: green;
+  background-color:#baf1a1;
+}
+/* score */
+.score {
+  display: flex;
+  justify-content: center;
+  background-color: lightgreen;
+  color: white;
+  font-size: 1.7em;
+  align-items: center;
+  padding-top: 1em;
+}
+.center {
+}
+/* question */
+h2 {
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+label {
+  margin-bottom: 0;
+}
+
+.centerq {
+  display: flex;
+  flex-direction: column;
+}
+
+.answer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+}
+
+.labelAnswer {
+  margin-left: 0.3em;
+}
+
+input.submit {
+  background-color: black;
+  color: white;
+  border-style: none;
+  border-radius: 1em;
+  padding: 1em 0;
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
 }

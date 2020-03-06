@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import '../assets/css/Results.css';
 import data from '../trivia.json';
 
 function Results(props) {

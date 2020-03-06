@@ -1,7 +1,0 @@
-.score {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: lightgreen;
-  color: white;
-  font-size: 1.1em;
-}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import '../assets/css/Question.css';
 import data from '../trivia.json';
 
 export default function Question(props) {
@@ -38,7 +37,7 @@ export default function Question(props) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
           <div className="left"></div>
-          <div className="center">
+          <div className="centerq">
             <div className="answer">
               <input
                 id="answer1"

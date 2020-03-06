@@ -1,54 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import data from './trivia.json';
-import Question from './components/Question';
-import Score from './components/Score';
-import Progress from './components/Progress';
-import Results from './components/Results';
+import Quiz from './components/Quiz'
+import Home from './components/Home'
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
-const answers = data.map(
-  (q) => q.allAnswers.sort(() => Math.random() - 0.5)
-)
-
-function App() {
-  const [question, setQuestion] = useState(0)
-  const [score,setScore] = useState(0);
-  const [quizEnd, setQuizEnd] = useState(false);
-
-  // let shuffled = data[question].allAnswers.sort(() => Math.random() - 0.5)
-
-  function nextQuestion (rightAnswer) {
-    if (rightAnswer){
-      scoreUp()
-    }
-   if (question == (data.length - 1)) {
-     setQuizEnd(true)
-   } else {
-     setQuestion(question + 1)
-   } 
-  }
-
-  function scoreUp() {
-    setScore(score + 1);
-  }
-  if (quizEnd) {
-       return (
-         <div>
-       <Score score={score} length={data.length}/>
-       <Results score={score}/> 
-       </div>)
-     } else {
-       //shuffled = data[question].allAnswers.sort(() => Math.random() - 0.5)
-     return (
-     <div className='container'>
-    <Progress question={data[question].id} length={data.length}/>
- <Question
-      question={data[question].question} answer={data[question].answer} allAnswers={answers[question]} next={(x) => {nextQuestion(x)}} scoreUp={() => {scoreUp()}}
-    />
-    
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+function App () {
+return(
+  <div className="App">
+      <Navbar bg="dark" variant="dark" sticky="top">
+        <Nav.Link href="/">Home</Nav.Link>
+          <Nav className="mr-auto">
+          <Nav.Link href="/quiz">Quiz</Nav.Link>
+        </Nav>
+      </Navbar>
+      <Router>
+      <Switch>
+        <Route path='/quiz'>
+        <Quiz/>
+        </Route>
+        <Route path='/'>
+        <Home/>
+        </Route>
+      </Switch>
+    </Router>
   </div>
-     )}
-}
-
-export default App;
+)}
+export default App
