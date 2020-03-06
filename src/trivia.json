@@ -19,5 +19,12 @@
         "answer": "Bern",
         "allAnswers": [ "Bern", "Bratislava",  "Scandinavia",  "Brussels"]
 
+    },
+    {
+        "id": 4,
+        "question": "How high is Bogotá?",
+        "answer": "2640 metres",
+        "allAnswers": [ "Coked up", "High as a kite",  "2640 metres",  "2640 feet"]
+
     }
 ]
